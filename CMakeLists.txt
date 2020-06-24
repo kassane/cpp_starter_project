@@ -73,12 +73,6 @@ endif()
 if(ENABLE_CONAN)
     set(CONAN_EXTRA_REQUIRES "")
     set(CONAN_EXTRA_OPTIONS "")
-
-    #if(CPP_STARTER_USE_SDL)
-    #  set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} library/version@bincrafters/stable)
-    # set(CONAN_EXTRA_OPTIONS ${CONAN_EXTRA_OPTIONS} library options)
-    #endif()
-
     include(cmake/Conan.cmake)
     run_conan()
 endif()
