@@ -1,12 +1,14 @@
 # A fuzz test runs until it finds an error. This particular one is going to rely on libFuzzer.
 #
-
+if(ENABLE_CONAN)
+ set(CONAN_PKGS CONAN_PKG::fmt)
+endif()
 add_executable(fuzz_tester fuzz_tester.cpp)
 target_link_libraries(
   fuzz_tester
   PRIVATE project_options
           project_warnings
-          CONAN_PKG::fmt
+          ${CONAN_PKGS}
           -coverage
           -fsanitize=fuzzer,undefined,address)
 target_compile_options(fuzz_tester PRIVATE -fsanitize=fuzzer,undefined,address)

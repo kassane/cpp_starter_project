@@ -2,7 +2,7 @@ include(ExternalProject)
 ExternalProject_Add(
   Nana
   GIT_REPOSITORY https://github.com/cnjinhao/nana.git
-  GIT_TAG v1.6.2
+  GIT_TAG v1.7.4
   CMAKE_CACHE_ARGS "-DNANA_CMAKE_SHARED_LIB:BOOL=TRUE"
   INSTALL_COMMAND "")
 
